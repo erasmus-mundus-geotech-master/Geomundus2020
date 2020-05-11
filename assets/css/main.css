@@ -116,12 +116,26 @@ ul.topnav {
     z-index: 9999;
     width: 100%;
     max-height: 100%;
-    overflow-y: auto;
     background-color: #4FA49A;
 }
 
 ul.topnav li {
     float: left;
+}
+
+ul.topnav li.has-dropdown ul.main-menu-dropdown {
+    background-color: rgba(78, 164, 154, 0.9);
+    position: absolute;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: none;
+    text-align:center;
+    border-radius: 15px;
+}
+
+ul.topnav li.has-dropdown:hover ul.main-menu-dropdown {
+    display: block;
 }
 
 ul.topnav li a {
@@ -141,6 +155,7 @@ ul.topnav li a:hover {
 ul.topnav li.icon {
     display: none;
 }
+
 
 @media screen and (max-width:680px) {
     ul.topnav li:not(:first-child) {
