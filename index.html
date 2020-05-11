@@ -68,19 +68,32 @@
 
 <body onload="initMap()">
     <ul class="topnav" id="hide">
-        <li><a href="#header" onclick="display_inline()">Home</a></li>
-        <li><a href="#one" onclick="display_inline()">Information</a></li>
-        <li><a href="#two" onclick="display_inline()">Speakers</a></li>
-        <li><a href="#three" onclick="display_inline()">Location</a></li>
-        <li><a href="#map_section" onclick="display_inline()">Map</a></li>
-        <li><a href="#four" onclick="display_inline()">Programme</a></li>
-        <li><a href="#five" onclick="display_inline()">Papers and Posters Submission</a></li>
-        <li><a href="#nine" onclick="display_inline()">Registration</a></li>
+        <li class="has-dropdown"><a href="#header" onclick="display_inline()">Home</a>
+            <ul class="main-menu-dropdown">
+                <li><a href="#info" onclick="display_inline()">Information</a></li>
+                <li><a href="#footer" onclick="display_inline()">History</a></li>
+            </ul>            
+        </li>
+        <li class="has-dropdown"><a href="#programme" onclick="display_inline()">Programme</a>
+            <ul class="main-menu-dropdown">
+                <li><a href="#speakers" onclick="display_inline()">Speakers</a></li>
+            </ul>
+        </li>
+        <li><a href="#registration" onclick="display_inline()">Registration</a></li>
+        <li><a href="#submission" onclick="display_inline()">Papers and Posters Submission</a></li>
         <!-- <li><a href="#ten" onclick="display_inline()">Submission</a></li> -->
-        <li><a href="#six" onclick="display_inline()">About us</a></li>
-        <li><a href="#seven" onclick="display_inline()">Contact</a></li>
-        <li><a href="#eight" onclick="display_inline()">Sponsors</a></li>
-        <li><a href="#footer" onclick="display_inline()">History</a></li>
+        <li class="has-dropdown"><a href="#location" onclick="display_inline()">Location</a>
+            <ul class="main-menu-dropdown">
+                <li><a href="#map_section" onclick="display_inline()">Map</a></li>
+            </ul>
+        </li>
+        <li><a href="#sponsors" onclick="display_inline()">Sponsors</a></li>
+        <li class="has-dropdown"><a href="#about" onclick="display_inline()">About us</a>
+            <ul class="main-menu-dropdown">
+                <li><a href="#about" onclick="display_inline()">The Team</a></li>
+                <li><a href="#contact" onclick="display_inline()">Contact</a></li>
+            </ul>
+        </li>
         <li class="icon">
             <a style="font-size:15px;" onclick="myFunction()">☰</a>
         </li>
@@ -131,7 +144,7 @@
                     </p>
                 </div>
                 <ul class="actions">
-                    <li><a href="#one" class="button  scrolly">Discover</a></li>
+                    <li><a href="#info" class="button  scrolly">Discover</a></li>
                 </ul>
             </div>
         </div>
@@ -139,7 +152,7 @@
     </section>
 
     <!-- One: WHAT IS GEOMUNDUS -->
-    <section id="one" class="main style1">
+    <section id="info" class="main style1">
         <div class="container">
             <div class="row 150%">
                 <div class="12u 12u$(medium)">
@@ -151,7 +164,7 @@
                         GeoMundus is a free international Conference organized <b>by students for students</b>.The organizing committee is the students from the <a href="https://www.mastergeotech.info/" style="color: #6bd4c8" target="_blank">Erasmus Mundus Master's of Science in Geospatial Technologies</a>.
                         The conference aims to share cutting-edge scientific research, knowledge, and skills in the fields of Geospatial Technologies, Geoinformatics, and Geosciences, including but not limited to geographic information systems and sciences,
                         spatial cognition, geography, and spatial data sciences.
-                        </br>Please see <a href="#four" style="color: #6bd4c8">Programme Section</a> for more detailed information.
+                        </br>Please see <a href="#programme" style="color: #6bd4c8">Programme Section</a> for more detailed information.
                     </p>
                     <!--
                     <iframe src="https://ivv6.maps.arcgis.com/apps/MapJournal/index.html?appid=c0d6351b6c6b4541bf42c7be536bf4c1" alt="StoryMap" style="width: 100%; height:600px"></iframe>
@@ -379,7 +392,7 @@
                             <!-- rg-thumbs -->
                         </div>
                         <!-- <iframe width="100%" height="500" src="https://www.youtube.com/embed/iE3QapLTNuM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
-                        <!-- <br/><br/><br/> Registration is <strong>free</strong>, so <a href="#nine" style="color:red;">sign up now!</a> -->
+                        <!-- <br/><br/><br/> Registration is <strong>free</strong>, so <a href="#registration" style="color:red;">sign up now!</a> -->
                     </p>
 
                 </div>
@@ -394,11 +407,11 @@
             });
         </script>
     </section>
-    <!--2019 SPEAKERS -->
-    <section id="two" class="main style2" w3-include-html='speakers.html'></section>
+    <!--2020 SPEAKERS -->
+    <section id="speakers" class="main style2" w3-include-html='speakers.html'></section>
 
-    <!-- Three: LOCATION of  CASTELLON -->
-    <section id="three" class="main style1">
+    <!-- LOCATION -->
+    <section id="location" class="main style1">
         <div class="container">
             <div class="row 150%">
                 <div align="left" class="6u 12u$(medium)">
@@ -481,7 +494,7 @@
         </div>
     </section>
 
-    <section id="three" class="main style2 special">
+    <section id="location" class="main style2 special">
         <div id="map_section">
             <ul class="major-icons">
                 <li><span onclick="setMapVisibility('flight');" class="icon style3 major fa-plane"></span></li>
@@ -576,11 +589,11 @@
         </div>
     </section>
     <!---->
-    <!-- Four: PROGRAM AND SCHEDULE -->
-    <section id="four" class="main style1" w3-include-html="program.html"></section>
-    <!-- Five: REGISTRATION AND SUBMISSION -->
+    <!-- PROGRAM AND SCHEDULE -->
+    <section id="programme" class="main style1" w3-include-html="program.html"></section>
+    <!-- REGISTRATION AND SUBMISSION -->
 
-    <section id="five" class="main style2 special">
+    <section id="submission" class="main style2 special">
         <div class="container" style="text-align: justify;">
             <header class="major">
                 <h2>Short Papers and Posters Submission</h2>
@@ -613,7 +626,7 @@
             <br>
         </div>
     </section>
-    <section id="five2" class="main style1 special">
+    <section id="submission2" class="main style1 special">
         <div class="container" style="text-align: justify;">
             <p>
                 Three best paper submissions from students will be awarded <b>travel grants to GeoMundus 2019 worth up to 500 EUR.</b> The grant covers hotel accommodation of up to 200 EUR and travel costs of up to 300 EUR. Note that travel and accommodation
@@ -633,7 +646,7 @@
             </p>
     </section>
 
-    <section id="nine" class="main style2">
+    <section id="registration" class="main style2">
         <div class="container">
             <header class="major">
                 <h2>Participant Registration</h2>
@@ -643,10 +656,10 @@
             </p>
     </section>
 
-    <!-- Six: Team -->
-    <section id="six" class="main style1" w3-include-html='team.html'>
+    <!-- Team -->
+    <section id="about" class="main style1" w3-include-html='team.html'>
     </section>
-    <section id="seven" class="main style2">
+    <section id="contact" class="main style2">
         <div class="container">
             <header class="major">
                 <h2>Contact</h2>
@@ -674,7 +687,7 @@
 
 
     <!-- Seven -->
-    <section id="eight" class="main style1">
+    <section id="sponsors" class="main style1">
         <div class="container">
             <header class="major">
                 <h2>Sponsors & Partners</h2>
