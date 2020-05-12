@@ -129,9 +129,8 @@ ul.topnav li.has-dropdown ul.main-menu-dropdown {
     list-style: none;
     margin: 0;
     padding: 0;
-    display: none;
+    display: none;    
     text-align:center;
-    border-radius: 15px;
 }
 
 ul.topnav li.has-dropdown:hover ul.main-menu-dropdown {
@@ -139,8 +138,9 @@ ul.topnav li.has-dropdown:hover ul.main-menu-dropdown {
 }
 
 ul.topnav li a {
-    display: inline-block;
+    display: inline-block;   
     color: #f2f2f2;
+    
     text-align: center;
     padding: 10px 10px;
     text-decoration: none;
@@ -150,6 +150,8 @@ ul.topnav li a {
 
 ul.topnav li a:hover {
     background-color: #4361C2;
+    
+    text-shadow:#ffffff 0 0 0.2em;
 }
 
 ul.topnav li.icon {
@@ -2732,6 +2734,10 @@ button:disabled,
     box-shadow: inset 0 0 0 1px #ffffff;
     color: #ffffff !important;
 }
+.main.style2 .button {
+    box-shadow: inset 0 0 0 1px #ffffff;
+    color: #ffffff !important;
+}
 
 .main.style2 input[type="submit"]:hover,
 .main.style2 input[type="reset"]:hover,
@@ -2774,6 +2780,30 @@ button:disabled,
 .main.style2 button.special:active,
 .main.style2 .button.special:active {
     background-color: rgba(255, 255, 255, 0.25) !important;
+}
+
+.main.style2 input[type="button"].map,
+.main.style2 button.map,
+.main.style2 .button.map {
+    border: #4a87d3 1px solid;
+    box-shadow: inset 0 0 0 1px #ffffff !important;
+    color: #4a87d3 !important;
+}
+.main.style2 input[type="submit"].map:hover,
+.main.style2 input[type="reset"].map:hover,
+.main.style2 input[type="button"].map:hover,
+.main.style2 button.map:hover,
+.main.style2 .button.map:hover {
+    background-color: #4a87d3;
+    color: #ffffff !important;
+}
+
+.main.style2 input[type="submit"].map:active,
+.main.style2 input[type="reset"].map:active,
+.main.style2 input[type="button"].map:active,
+.main.style2 button.map:active,
+.main.style2 .button.map:active {
+    background-color: #4a87d3 !important;
 }
 
 .main.style2 ul.major-icons li .icon {

@@ -17,13 +17,14 @@ function toggle(a) {
 var map;
 var markers;
 
-var Ujiloc = new google.maps.LatLng(39.9937, -0.0672);
-var ValenciaAirportLoc = new google.maps.LatLng(39.4921903, -0.4743740);
-var BarcelonaAirportLoc = new google.maps.LatLng(41.3038545, 2.0729609);
-var MadridAirportLoc = new google.maps.LatLng(40.505776, -3.566914);
+var WWUloc = new google.maps.LatLng(51.9693848, 7.5935798);
+var WeezeAirportLoc = new google.maps.LatLng(51.8081477, 6.3661199);
+var MünsterAirportLoc = new google.maps.LatLng(52.132938,7.6887554);
+var DusselAirportLoc = new google.maps.LatLng(51.7031027, 6.6679891);
+var BonnAirportLoc = new google.maps.LatLng(50.8707202, 7.1385457);
 
 
-var imageUJI = {
+var imageVenue= {
     url: 'images/worldwide.png'
 };
 
@@ -33,9 +34,10 @@ var imageAirport = {
 
 var ujiTooltip = 'Conference Venue: Universitat Jaume I- Espaitec 2'
 
-var ValenciaAirport;
-var BarcelonaAirport;
-var MadridAirport;
+var WeezeAirport;
+var MünsterAirport;
+var DusselAirport;
+var BonnAirport;
 var CastellonTrain;
 var ValenciaTrain;
 var BarcelonaTrain;
@@ -45,20 +47,19 @@ var university;
 var Dinner;
 var MeetUp;
 
-var infoUji
-var infoValenciaAirport
-var infoUji
-var infoDinnerLoc
+var infoVenue,infoMünsterAirport,infoWeezeAirport,infoDusselAirport,infoBonnAirport,
+infoDinnerLoc,infoMeetUp,infoCastellon,infoValencia,infoBarcelona,infoMadrid;
 
-var contentUji = '<div id = "content" style = "color:#4a87d3" > ' +
-    '<h2 style="color:#4a87d3">Espaitec 2, Jaume I University </h2>' +
-    '<p align="left" style="color:#4a87d3">' +
-    '<b style="color:#4a87d3">Address: </b> Avenida de Vicent Sos Baynat, s/n, 12071 Castellón <br>' +
-    '<b style="color:#4a87d3">Teléfono: </b> +34 902320320<br>' +
-    '<b style="color:#4a87d3">Web Page: </b><a href="https://www.geotec.uji.es">' +
-    'https://www.uji.es</a></p>' +
-    '<a href="https://www.google.com/maps/place/Fundaci%C3%B3n+f2e/@39.9937823,-0.073097,18.56z/data=!4m12!1m6!3m5!1s0xd5ffe0fca9b5147:0x1368bf53b3a7fb3f!2sJaume+I+University!8m2!3d39.9945711!4d-0.0689003!3m4!1s0x0:0xd50e11a2dfa65003!8m2!3d39.9937759!4d-0.0737178?hl=en-US"><b style="color:#4a87d3">View on Map</a></p>' +
-    '</div>';
+var contentWwu = '<div id="content" style="color:#4a87d3; line-height:2; padding:1%">' +
+                    '<h2 style="color:#4686A0">Institute for Geoinformatic</h2>' +
+                    '<p align="center" style="color:#4a87d3">' +
+                    '<b style="color:#4a87d3">Telephone:</b>+49 (251) 83-33083 </br>' +
+                    '<b style="color:#4a87d3">Web Page: </b><a target="_blank" href="http://www.uni-muenster.de/Geoinformatics/en/">' +
+                    'www.uni-muenster.de/Geoinformatics/en/</a></p>' +
+                    '<h3 style="color:#4a87d3"><a class="button map"  target="_blank" href="https://goo.gl/maps/rNfq5pMvyYKjcVXo8">Navigate</a></h3>' +
+                    '</div>';
+
+
 
 align = "left"
 
@@ -69,17 +70,27 @@ function clearObjectFromMap(object) {
 }
 
 function clearInforWindows() {
-    if (infoUji) infoUji.close();
-    if (infoValenciaAirport) infoValenciaAirport.close();
-    if (infoUji) infoUji.close();
+    if (infoVenue) infoVenue.close();
+    if (infoWeezeAirport) infoWeezeAirport.close();
+    if (infoMünsterAirport) infoMünsterAirport.close();
+    if (infoDusselAirport) infoDusselAirport.close();
+    if (infoBonnAirport) infoBonnAirport.close();
     if (infoDinnerLoc) infoDinnerLoc.close();
+    if (infoMeetUp) infoMeetUp.close();
+    if (infoCastellon) infoCastellon.close();
+    if (infoValencia) infoValencia.close();
+    if (infoBarcelona) infoBarcelona.close();
+    if (infoMadrid) infoMadrid.close();
+
+
 }
 
 function setMapVisibility(itemClicked) {
     window.location.hash = '#map_section';
-    clearObjectFromMap(ValenciaAirport);
-    clearObjectFromMap(BarcelonaAirport);
-    clearObjectFromMap(MadridAirport);
+    clearObjectFromMap(WeezeAirport);
+    clearObjectFromMap(BonnAirport);
+    clearObjectFromMap(MünsterAirport);
+    clearObjectFromMap(DusselAirport);
 
     //clearObjectFromMap(university);
     clearObjectFromMap(Dinner);
@@ -94,103 +105,125 @@ function setMapVisibility(itemClicked) {
         case "flight":
             {
                 //Airports
-                var contentValenciaAirport = '<div id="content" style="color:#4686A0">' +
-                    '<h2 style="color:#4686A0">Manises Valencia Airport</h2>' +
-                    '<p align="left" style="color:#4686A0">' +
-                    '<b style="color:#4686A0">Telephone:+34 902 40 47 04</b></br>' +
-                    '<b style="color:#4686A0">Web Page: </b><a target="_blank" href="https://www.airport-valencia.com/">' +
-                    'https://www.airport-valencia.com/</a></p>' +
-                    '</a></p>' +
-                    '<p>How to reach Castellon? (Transit Details)</br><a href="#fromValencia">View Details</a>' +
+                var contentWeezeAirport = '<div id="content" style="color:#4a87d3; line-height:2; padding:1%">' +
+                    '<h2 style="color:#4686A0">Weeze International Airport</h2>' +
+                    '<p align="center" style="color:#4a87d3">' +
+                    '<b style="color:#4a87d3">Telephone:</b> +49 2837 666111</br>' +
+                    '<b style="color:#4a87d3">Web Page: </b><a target="_blank" href="http://airport-weeze.de/">' +
+                    'airport-weeze.de</a></p>' +
+                    '<h3 style="color:#4a87d3"><a class="button map"  target="_blank" href="https://goo.gl/maps/52dZZwgqrrQgMhQg6">Navigate</a></h3>' +
                     '</div>'
 
-                infoValenciaAirport = new google.maps.InfoWindow({
-                    content: contentValenciaAirport
+                infoWeezeAirport = new google.maps.InfoWindow({
+                    content: contentWeezeAirport
                 });
 
-                ValenciaAirport = new google.maps.Marker({
-                    position: ValenciaAirportLoc,
+                WeezeAirport = new google.maps.Marker({
+                    position: WeezeAirportLoc,
+                    map: map,
+                    icon: imageAirport,
+                   // animation: google.maps.Animation.BOUNCE,
+                });
+
+                infoMünsterAirport = new google.maps.InfoWindow({
+                    content: '<div id="content" style="color:#4a87d3; line-height:2; padding:1%">' +
+                    '<h2 style="color:#4686A0">Münster Osnabrück International Airport</h2>' +
+                    '<p align="center" style="color:#4a87d3">' +
+                    '<b style="color:#4a87d3">Telephone:</b>+49 2571 943360</br>' +
+                    '<b style="color:#4a87d3">Web Page: </b><a target="_blank" href="http://fmo.de">' +
+                    'fmo.de</a></p>' +
+                    '<h3 style="color:#4a87d3"><a class="button map"  target="_blank" href="https://g.page/FMOFlughafen?share">Navigate</a></h3>' +
+                    '</div>'
+                });
+
+                MünsterAirport = new google.maps.Marker({
+                    position: MünsterAirportLoc,
                     map: map,
                     icon: imageAirport,
                     // animation: google.maps.Animation.BOUNCE,
                 });
 
-                infoBarcelonaAirport = new google.maps.InfoWindow({
-                    content: '<div id="content" style="color:#4686A0">' +
-                        '<h2 style="color:#4686A0">Barcelona–El Prat Airport</h2>' +
-                        '<p align="left" style="color:#4686A0">' +
-                        '<b style="color:#4686A0">Telephone:+34 902 40 47 04 </b></br>' +
-                        '<b style="color:#4686A0">Web Page: </b><a target="_blank" href="http://www.aeropuertobarcelona-elprat.com">' +
-                        'http://www.aeropuertobarcelona-elprat.com</a></p>' +
-                        '</a></p>' +
-                        '<p>How to reach Castellon? (Transit Details)</br><a href="https://www.google.com/maps/dir/Barcelona%E2%80%93El+Prat+Airport+(BCN),+El+Prat+de+Llobregat/Valencia+Airport+(VLC),+Carretera+del+Aeropuerto,+Manises/@40.3879247,-0.3185232,8z/data=!3m1!4b1!4m14!4m13!1m5!1m1!1s0x12a49e64847c8ea5:0xf32be942fb6f9bd7!2m2!1d2.0832941!2d41.297445!1m5!1m1!1s0xd605a9f60cc5a67:0x4cc2b7ffaab10182!2m2!1d-0.4780256!2d39.4892327!3e4" target="_blank">View in Map</a><br>			<a href="#howto" target="_blank">View Details</a>' +
-                        '</div>'
+                infoDusselAirport = new google.maps.InfoWindow({
+                    content: '<div id="content" style="color:#4a87d3; line-height:2; padding:1%">' +
+                    '<h2 style="color:#4686A0">Düsseldorf International Airport (DUS)</h2>' +
+                    '<p align="center" style="color:#4a87d3">' +
+                    '<b style="color:#4a87d3">Telephone:</b>+49 211 4210</br>' +
+                    '<b style="color:#4a87d3">Web Page: </b><a target="_blank" href="http://dus.com">' +
+                    'dus.com</a></p>' +
+                    '<h3 style="color:#4a87d3"><a class="button map"  target="_blank" href="https://goo.gl/maps/JNSvkPzKFQLCAaTy7">Navigate</a></h3>' +
+                    '</div>'
                 });
 
-                BarcelonaAirport = new google.maps.Marker({
-                    position: BarcelonaAirportLoc,
+                DusselAirport = new google.maps.Marker({
+                    position: DusselAirportLoc,
                     map: map,
                     icon: imageAirport,
                     // animation: google.maps.Animation.BOUNCE,
                 });
 
-                infoMadridAirport = new google.maps.InfoWindow({
-                    content: '<div id="content" style="color:#4686A0">' +
-                        '<h2 style="color:#4686A0">Madrid-Barajas Airport</h2>' +
-                        '<p align="left" style="color:#4686A0">' +
-                        '<b style="color:#4686A0">Telephone:+34 91 321 10 00</b></br>' +
-                        '<b style="color:#4686A0">Web Page: </b><a target="_blank" href="https://www.aeropuertomadrid-barajas.com">' +
-                        'https://www.aeropuertomadrid-barajas.com</a></p>' +
-                        '</a></p>' +
-                        '<p>How to reach Castellon? (Transit Details)</br><a href = "https://www.google.com/maps/dir/Madrid-Barajas+Adolfo+Suárez+Airport+(MAD),+Av+de+la+Hispanidad,+s%2Fn,+28042+Madrid/Valencia+Airport+(VLC),+Carretera+del+Aeropuerto,+Manises/@39.9904863,-3.1439886,8z/data=!3m1!4b1!4m14!4m13!1m5!1m1!1s0xd4231d000000001:0x6e7725ea0f85ceef!2m2!1d-3.5675982!2d40.4983322!1m5!1m1!1s0xd605a9f60cc5a67:0x4cc2b7ffaab10182!2m2!1d-0.4780256!2d39.4892327!3e4" target = "_blank">View in Map</a>			<a href="#howto" target = "_blank"><br>View Details</a>' +
-                        '</div>'
+                infoBonnAirport = new google.maps.InfoWindow({
+                    content: '<div id="content" style="color:#4a87d3; line-height:2; padding:1%">' +
+                    '<h2 style="color:#4686A0">Cologne Bonn Airport (CGN) Köln Bonn Airport</h2>' +
+                    '<p align="center" style="color:#4a87d3">' +
+                    '<b style="color:#4a87d3">Telephone:</b>+49 2203 404001</br>' +
+                    '<b style="color:#4a87d3">Web Page: </b><a target="_blank" href="http://koeln-bonn-airport.de">' +
+                    'koeln-bonn-airport.de</a></p>' +
+                    '<h3 style="color:#4a87d3"><a class="button map"  target="_blank" href="https://goo.gl/maps/JNSvkPzKFQLCAaTy7">Navigate</a></h3>' +
+                    '</div>'
                 });
 
-                MadridAirport = new google.maps.Marker({
-                    position: MadridAirportLoc,
+                BonnAirport = new google.maps.Marker({
+                    position: BonnAirportLoc,
                     map: map,
                     icon: imageAirport,
                     // animation: google.maps.Animation.BOUNCE,
                 });
 
-                map.panTo(ValenciaAirportLoc);
+
+
+
+                map.panTo(WeezeAirportLoc);
                 map.setZoom(7);
-                ValenciaAirport.addListener('click', function() {
+                WeezeAirport.addListener('click', function() {
                     clearInforWindows()
-                    infoValenciaAirport.open(map, ValenciaAirport);
+                    infoWeezeAirport.open(map, WeezeAirport);
                 });
-                BarcelonaAirport.addListener('click', function() {
+                MünsterAirport.addListener('click', function() {
                     clearInforWindows()
-                    infoBarcelonaAirport.open(map, BarcelonaAirport);
+                    infoMünsterAirport.open(map, MünsterAirport);
                 });
-                MadridAirport.addListener('click', function() {
+                DusselAirport.addListener('click', function() {
                     clearInforWindows()
-                    infoMadridAirport.open(map, MadridAirport);
+                    infoDusselAirport.open(map, DusselAirport);
+                });
+                BonnAirport.addListener('click', function() {
+                    clearInforWindows()
+                    infoBonnAirport.open(map, BonnAirport );
                 });
             }
             break;
         case "location":
-            {
+            {   
 
-                infoUji = new google.maps.InfoWindow({
-                    content: contentUji
+                infoVenue = new google.maps.InfoWindow({
+                    content: contentWwu
                 });
                 if (!university)
                     university = new google.maps.Marker({
-                        position: Ujiloc,
+                        position: WWUloc,
                         map: map,
-                        icon: imageUJI,
+                        icon: imageVenue,
                         title: ujiTooltip,
                         animation: google.maps.Animation.BOUNCE
                     });
 
                 university.addListener('click', function() {
                     clearInforWindows()
-                    infoUji.open(map, university);
+                    infoVenue.open(map, university);
                     //infoDomplatz.close();
                 });
 
-                map.panTo(Ujiloc);
+                map.panTo(WWUloc);
                 map.setZoom(13);
             }
             break;
@@ -360,18 +393,22 @@ function setMapVisibility(itemClicked) {
                 });
 
                 CastellonTrain.addListener('click', function() {
+                    clearInforWindows()
                     infoCastellon.open(map, CastellonTrain);
                 });
 
                 ValenciaTrain.addListener('click', function() {
+                    clearInforWindows()
                     infoValencia.open(map, ValenciaTrain);
                 });
 
                 BarcelonaTrain.addListener('click', function() {
+                    clearInforWindows()
                     infoBarcelona.open(map, BarcelonaTrain);
                 });
 
                 MadridTrain.addListener('click', function() {
+                    clearInforWindows()
                     infoMadrid.open(map, MadridTrain);
                 });
 
@@ -386,35 +423,36 @@ function setMapVisibility(itemClicked) {
 
 $(window).resize(function() {
     google.maps.event.trigger(map, "resize");
-    map.setCenter(Ujiloc);
+    map.setCenter(WWUloc);
 });
 
 function initMap() {
     //document.getElementById('map_section').style.display = 'none'
     map = new google.maps.Map(document.getElementById('map'), {
-        center: Ujiloc,
+        center: WWUloc,
         scrollwheel: false,
         zoom: 13
     });
+    
 
-    infoUji = new google.maps.InfoWindow({
-        content: contentUji
+    infoVenue = new google.maps.InfoWindow({
+        content: contentWwu
     });
 
     university = new google.maps.Marker({
-        position: Ujiloc,
+        position: WWUloc,
         map: map,
-        icon: imageUJI,
+        icon: imageVenue,
         animation: google.maps.Animation.BOUNCE,
         title: ujiTooltip,
     });
 
     university.addListener('click', function() {
         clearInforWindows()
-        infoUji.open(map, university);
+        infoVenue.open(map, university);
         //infoDomplatz.close();
     });
 
-    map.panTo(Ujiloc);
+    map.panTo(WWUloc);
     map.setZoom(13);
 }
