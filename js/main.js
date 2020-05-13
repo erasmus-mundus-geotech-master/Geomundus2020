@@ -29,7 +29,8 @@ var imageVenue= {
 };
 
 var imageAirport = {
-    url: 'images/airport.png'
+    url: 'images/airport1.png',
+    scaledSize: new google.maps.Size(32, 32)
 };
 
 var ujiTooltip = 'Conference Venue: Universitat Jaume I- Espaitec 2'
@@ -38,7 +39,7 @@ var WeezeAirport;
 var MünsterAirport;
 var DusselAirport;
 var BonnAirport;
-var CastellonTrain;
+var hotelSchlosspark;
 var ValenciaTrain;
 var BarcelonaTrain;
 var MadridTrain;
@@ -48,7 +49,7 @@ var Dinner;
 var MeetUp;
 
 var infoVenue,infoMünsterAirport,infoWeezeAirport,infoDusselAirport,infoBonnAirport,
-infoDinnerLoc,infoMeetUp,infoCastellon,infoValencia,infoBarcelona,infoMadrid;
+infoDinnerLoc,infoMeetUp,infoSchlosspark,infoValencia,infoBarcelona,infoMadrid;
 
 var contentWwu = '<div id="content" style="color:#4a87d3; line-height:2; padding:1%">' +
                     '<h2 style="color:#4686A0">Institute for Geoinformatic</h2>' +
@@ -77,7 +78,7 @@ function clearInforWindows() {
     if (infoBonnAirport) infoBonnAirport.close();
     if (infoDinnerLoc) infoDinnerLoc.close();
     if (infoMeetUp) infoMeetUp.close();
-    if (infoCastellon) infoCastellon.close();
+    if (infoSchlosspark) infoSchlosspark.close();
     if (infoValencia) infoValencia.close();
     if (infoBarcelona) infoBarcelona.close();
     if (infoMadrid) infoMadrid.close();
@@ -96,7 +97,7 @@ function setMapVisibility(itemClicked) {
     clearObjectFromMap(Dinner);
     clearObjectFromMap(MeetUp);
 
-    clearObjectFromMap(CastellonTrain);
+    clearObjectFromMap(hotelSchlosspark);
     clearObjectFromMap(ValenciaTrain);
     clearObjectFromMap(BarcelonaTrain);
     clearObjectFromMap(MadridTrain);
@@ -268,19 +269,18 @@ function setMapVisibility(itemClicked) {
             break;
         case 'meetup':
             {
-                var MeetUpLoc = new google.maps.LatLng(39.988017, -0.047769);
+                var MeetUpLoc = new google.maps.LatLng(51.9624766,7.6237339);
                 var imageMeetUp = {
                     url: 'images/meetuploc.png',
                     scaledSize: new google.maps.Size(32, 32),
                 };
 
-                var contentMeetUp = '<div id="content" style="color:#4a87d3">' +
-                    '<h2 style="color:#4a87d3">Pre Conference Meetup at<br>El Corte Inglés</h2><br>' +
-                    '<img src="https://www.gambrinuscastellon.com/wp-content/uploads/2019/11/borrull.jpg" width = "150" heigght = "150"></img>' +
-                    '<p align="left" style="color:#4a87d3">' +
-                    '<b style="color:#4a87d3">Address: Passeig de Morella, 1, 12006 <br>Castellón de la Plana, Castellón, Spain<br>' +
-                    '<a href = "https://www.google.com/maps/place/Supermercado+El+Corte+Ingl%C3%A9s/@39.9879839,-0.0478293,17.93z/data=!4m8!1m2!2m1!1sEl+Corte+Ingl%C3%A9s,+Passeig+de+Morella,+1,+12006!3m4!1s0x0:0x60172b9a7bb66d18!8m2!3d39.9880215!4d-0.0473973" target = "_blank">View on map</a>' +
-                    '</div>';
+                var contentMeetUp = '<div id="content" style="color:#4a87d3; line-height:2; padding:1%">' +
+                '<h2 style="color:#4686A0">Domplatz</h2>' +
+                '<p align="center" style="color:#4a87d3">' +
+                '<b style="color:#4a87d3">Address: Domplatz, 48149 Münster, Germany</br>' +
+                '<h3 style="color:#4a87d3"><a class="button map"  target="_blank" href="https://goo.gl/maps/CdXqDMUsyXgWjH8Q9">Navigate</a></h3>' +
+                '</div>';
                 infoMeetUp = new google.maps.InfoWindow({
                     content: contentMeetUp
                 });
@@ -300,120 +300,49 @@ function setMapVisibility(itemClicked) {
                 map.setZoom(13);
             }
             break;
-        case 'publicTransport':
+        case 'Hotel':
             {
 
                 //Train
-                var imageTrain = {
-                    url: 'images/train.png'
+                var imagehotel = {
+                    url: 'images/hotel1.png'
                 };
 
-                var castellonLoc = new google.maps.LatLng(39.987890, -0.052657);
-                var valenciaLoc = new google.maps.LatLng(39.465981, -0.377467);
-                var barcelonaLoc = new google.maps.LatLng(41.379093, 2.140134);
-                var madridLoc = new google.maps.LatLng(40.4065908, -3.6918535);
+                var Schlosspark = new google.maps.LatLng(51.9680211, 7.6082153);
 
-                var contentCastellon = '<div id="content" style="color:#4a87d3">' +
-                    '<h2 style="color:#4a87d3">Castelló Railway Station</h2>' +
-                    '<p align="left" style="color:#4a87d3">' +
-                    '<b style="color:#4a87d3">Address: </b> Calle Pintor Oliet 2, 12006  Castellón de la Plana <br>' +
-                    '<b style="color:#4a87d3">Teléfono: </b> +34 902320320<br>' +
-                    '<b style="color:#4a87d3">Web Page: </b><a href="http://www.renfe.com/EN/viajeros/index.html" target = "_blank">' +
-                    'http://www.renfe.com/EN/viajeros/index.html</a></p>' +
-                    '</div>';
 
-                var contentBarcelona = '<div id="content" style="color:#4686A0">' +
-                    '<h2 style="color:#4686A0">Barcelona Sants railway station</h2>' +
-                    '<p align="left" style="color:#4686A0">' +
-                    '<b style="color:#4686A0">Address: </b> Carrer del Rector Triadó 75, 08014 Barcelona <br>' +
-                    '<b style="color:#4686A0">Teléfono: </b> +34 902 320 320 <br>' +
-                    '<b style="color:#4686A0">Web Page: </b>' +
-                    '<a href="http://www.renfe.com/viajeros/cercanias/barcelona/" target = "_blank">http://www.renfe.com/viajeros/cercanias/barcelona/</a><br>' +
-                    '<a href = "https://www.google.com/maps/dir/Barcelona+Nord,+Carrer+de+Sabino+Arana,+Barcelona/Castell%C3%B3n+de+la+Plana/@41.3229395,2.0268209,11.86z/data=!4m14!4m13!1m5!1m1!1s0x12a499cbe131c8f5:0xc0c032f23fbbfe4c!2m2!1d2.1243454!2d41.3859291!1m5!1m1!1s0xd5ffe2bb82bc197:0xbf89204be1c64f49!2m2!1d-0.0513246!2d39.9863563!3e3" target = "_blank">View on map</a></p>' +
-                    '</div>';
 
-                var contentValencia = '<div id="content" style="color:#4686A0">' +
-                    '<h2 style="color:#4686A0">Estació del Nord, Valencia</h2>' +
-                    '<p align="left" style="color:#4686A0">' +
-                    '<b style="color:#4686A0">Address: </b> Carrer de Alacant 25, 46004 Valencia <br>' +
-                    '<b style="color:#4686A0">Teléfono: </b> +34 902 320 320 <br>' +
-                    '<b style="color:#4686A0">Web Page: </b><a href="http://www.renfe.com/viajeros/cercanias/valencia/" target = "_blank">http://www.renfe.com/viajeros/cercanias/valencia/</a><br>' +
-                    '<a href="https://www.google.com/maps/dir/Val%C3%A8ncia+Nord,+Carrer+d\'Alacant,+Valencia/Castell%C3%B3n+de+la+Plana/@39.7133618,-0.4975215,10z/data=!3m1!4b1!4m14!4m13!1m5!1m1!1s0xd604f35909b5015:0x83499d175a2c11b4!2m2!1d-0.3774451!2d39.4660302!1m5!1m1!1s0xd5ffe2bb82bc197:0xbf89204be1c64f49!2m2!1d-0.0513246!2d39.9863563!3e3" target = "_blank">View on map</a>' +
-                    '</p>' +
-                    '</div>';
+                var contentSchlosspark = '<div id="content" style="color:#4a87d3; line-height:2; padding:1%">' +
+                '<h2 style="color:#4686A0">Hotel Am Schlosspark</h2>' +
+                '<p align="center" style="color:#4a87d3">' +
+                '<b style="color:#4a87d3">Address:</b>Schmale Str. 2-4, 48149 Münster, Germany</br>' +
+                '<b style="color:#4a87d3">Telephone:</b>+49 251 8998200</br>' +
+                '<b style="color:#4a87d3">Web Page: </b><a target="_blank" href="https://hotel-am-schlosspark-muenster.de">' +
+                'hotel-am-schlosspark-muenster.de</a></p>' +
+                '<h3 style="color:#4a87d3"><a class="button map"  target="_blank" href="https://goo.gl/maps/SoTSTdY9UPvdoNSq5">Navigate</a></h3>' +
+                '</div>';
 
-                var contentMadrid = '<div id="content" style="color:#4686A0">' +
-                    '<h2 style="color:#4686A0">Madrid Atocha Railway Station</h2>' +
-                    '<p align="left" style="color:#4686A0">' +
-                    '<b style="color:#4686A0">Web Page: </b><a href="http://www.renfe.com/viajeros/cercanias/madrid/" target = "_blank">http://www.renfe.com/viajeros/cercanias/madrid/</a><br>' +
-                    '<a href = "https://www.google.com/maps/dir/Atocha+Cercan%C3%ADas,+Madrid/Castell%C3%B3n+de+la+Plana/@39.9175727,-3.021992,8z/data=!3m1!4b1!4m14!4m13!1m5!1m1!1s0xd42262445cdd817:0x3947f9c28d65035b!2m2!1d-3.6896451!2d40.4064655!1m5!1m1!1s0xd5ffe2bb82bc197:0xbf89204be1c64f49!2m2!1d-0.0513246!2d39.9863563!3e3" target = "_blank">View on map</a> </p>' +
-                    '</div>';
 
-                var infoCastellon = new google.maps.InfoWindow({
-                    content: contentCastellon
+                var infoSchlosspark = new google.maps.InfoWindow({
+                    content: contentSchlosspark
                 });
 
-                var infoValencia = new google.maps.InfoWindow({
-                    content: contentValencia
-                });
-
-                var infoBarcelona = new google.maps.InfoWindow({
-                    content: contentBarcelona
-                });
-
-                var infoMadrid = new google.maps.InfoWindow({
-                    content: contentMadrid
-                });
-                CastellonTrain = new google.maps.Marker({
-                    position: castellonLoc,
+                hotelSchlosspark = new google.maps.Marker({
+                    position: Schlosspark,
                     map: map,
-                    icon: imageTrain
+                    icon: imagehotel
                         //                    animation: google.maps.Animation.BOUNCE
                 });
 
-                ValenciaTrain = new google.maps.Marker({
-                    position: valenciaLoc,
-                    map: map,
-                    icon: imageTrain
-                        //                    animation: google.maps.Animation.BOUNCE
-                });
-
-                BarcelonaTrain = new google.maps.Marker({
-                    position: barcelonaLoc,
-                    map: map,
-                    icon: imageTrain
-                        //,                    animation: google.maps.Animation.BOUNCE
-                });
-
-                MadridTrain = new google.maps.Marker({
-                    position: madridLoc,
-                    map: map,
-                    icon: imageTrain
-                        //,                    animation: google.maps.Animation.BOUNCE
-                });
-
-                CastellonTrain.addListener('click', function() {
+        
+                hotelSchlosspark.addListener('click', function() {
                     clearInforWindows()
-                    infoCastellon.open(map, CastellonTrain);
+                    infoSchlosspark.open(map, hotelSchlosspark);
                 });
 
-                ValenciaTrain.addListener('click', function() {
-                    clearInforWindows()
-                    infoValencia.open(map, ValenciaTrain);
-                });
 
-                BarcelonaTrain.addListener('click', function() {
-                    clearInforWindows()
-                    infoBarcelona.open(map, BarcelonaTrain);
-                });
-
-                MadridTrain.addListener('click', function() {
-                    clearInforWindows()
-                    infoMadrid.open(map, MadridTrain);
-                });
-
-                map.panTo(castellonLoc);
-                map.setZoom(7);
+                map.panTo(Schlosspark);
+                map.setZoom(13);
             }
             break;
         default:
