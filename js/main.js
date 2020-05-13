@@ -33,7 +33,7 @@ var imageAirport = {
     scaledSize: new google.maps.Size(32, 32)
 };
 
-var ujiTooltip = 'Conference Venue: Universitat Jaume I- Espaitec 2'
+var ujiTooltip = 'Conference Venue: “Institute for Geoinformatics (IFGI)”, University of Münster'
 
 var WeezeAirport;
 var MünsterAirport;
