@@ -49,7 +49,7 @@ var Dinner;
 var MeetUp;
 
 var infoVenue,infoMünsterAirport,infoWeezeAirport,infoDusselAirport,infoBonnAirport,
-infoDinnerLoc,infoMeetUp,infoSchlosspark,infoValencia,infoBarcelona,infoMadrid;
+infoDinnerLoc,infoMeetUp,infoSchlosspark;
 
 var contentWwu = '<div id="content" style="color:#4a87d3; line-height:2; padding:1%">' +
                     '<h2 style="color:#4686A0">Institute for Geoinformatic</h2>' +
@@ -79,9 +79,7 @@ function clearInforWindows() {
     if (infoDinnerLoc) infoDinnerLoc.close();
     if (infoMeetUp) infoMeetUp.close();
     if (infoSchlosspark) infoSchlosspark.close();
-    if (infoValencia) infoValencia.close();
-    if (infoBarcelona) infoBarcelona.close();
-    if (infoMadrid) infoMadrid.close();
+
 
 
 }
@@ -230,23 +228,20 @@ function setMapVisibility(itemClicked) {
             break;
         case 'dinner':
             {
-                var DinnerLoc = new google.maps.LatLng(39.983396, -0.035208);
+                var DinnerLoc = new google.maps.LatLng(51.962415, 7.6323021);
                 var imageDinnerLoc = {
                     url: 'images/dinnerloc.png',
                     scaledSize: new google.maps.Size(32, 32),
                 };
 
-                var contentDinnerLoc = '<div id="content" style="color:#4a87d3">' +
-                    '<h2 style="color:#4a87d3">Dinner Venue <br>Cervecería Gambrinus</h2><br>' +
-                    '<img src="https://www.gambrinuscastellon.com/wp-content/uploads/2019/11/borrull.jpg" width = "150" heigght = "150"></img>' +
-                    // '<h3 style="color:#4a87d3">City Center</h3><br>'+
-                    '<p align="left" style="color:#4a87d3">' +
-                    '<b style="color:#4a87d3">Address: </b>Plaça del Jutge Borrull,12003 <br>Castelló de la Plana, Castelló, Spain<br>' +
-                    // '<b style="color:#4a87d3">Economy Single, breakfast included</b><br>'+
-                    // '<b style="color:#4a87d3">72,- €</b> <br/>'+'<b style="color:#4a87d3">Comfort Single, breakfast included</b><br>'+
-                    // '<b style="color:#4a87d3">	77,- € </b><br/>'+
-                    '<b style="color:#4a87d3">Web Page: </b><a href="https://www.gambrinuscastellon.com/" target="_blank">https://www.gambrinuscastellon.com/</a></p>' +
-                    '<a href = "https://www.google.com/maps/place/Cervecer%C3%ADa+Gambrinus+Borrull+Castell%C3%B3n/@39.983149,-0.0374177,17z/data=!3m1!4b1!4m5!3m4!1s0xd5fffd508a714bf:0x6602be996ce0807d!8m2!3d39.983149!4d-0.035229" target = "_blank">View on map</a>' +
+                var contentDinnerLoc = 
+                '<div id="content" style="color:#4a87d3; line-height:2; padding:1%">' +
+                    '<h2 style="color:#4686A0">Dinner Venue <br> Aposto</h2><br>' +
+                    '<p align="center" style="color:#4a87d3">' +
+                    '<img src="https://media.aposto.eu/aposto2017_muenster/Galerien/Impressionen-380/007_131030_APMS_S0001_S.jpg" width=50% height=50%></img>' +
+                    '</br><b style="color:#4a87d3">Telephone:</b> +49 2203 404001' +
+                    '</br><b style="color:#4a87d3">Address: </b> Alter Steinweg 21, 48143 Münster, Germany' +
+                    '<h3 style="color:#4a87d3"><a class="button map"  target="_blank" href="https://g.page/aposto-muenster?share">Navigate</a></h3>' +
                     '</div>';
                 infoDinnerLoc = new google.maps.InfoWindow({
                     content: contentDinnerLoc
@@ -303,7 +298,7 @@ function setMapVisibility(itemClicked) {
         case 'Hotel':
             {
 
-                //Train
+                //Hotels
                 var imagehotel = {
                     url: 'images/hotel1.png'
                 };
@@ -379,7 +374,7 @@ function initMap() {
     university.addListener('click', function() {
         clearInforWindows()
         infoVenue.open(map, university);
-        //infoDomplatz.close();
+       
     });
 
     map.panTo(WWUloc);
