@@ -25,6 +25,11 @@ $(document).ready(
             $('.topnav').removeClass('responsive');
         }}
     );
+    $('.topnav').find('a').click(function(){
+        if($(this).attr('href')){
+            $('#hide').slideToggle();
+        }
+    })
 
     });
 
