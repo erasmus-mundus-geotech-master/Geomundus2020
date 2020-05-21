@@ -23,14 +23,16 @@ $(document).ready(
         if($(window).width()> 680){
             $('#hide').css('display','inherit');
             $('.topnav').removeClass('responsive');
-        }}
+        }
+    }        
     );
+
     $('.topnav').find('a').click(function(){
-        if($(this).attr('href')){
+        console.log($(this).attr('href'));
+        if($(this).attr('href')&&$(window).width()<680){
             $('#hide').slideToggle();
         }
     })
-
     });
 
 //map control
