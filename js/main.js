@@ -28,7 +28,6 @@ $(document).ready(
     );
 
     $('.topnav').find('a').click(function(){
-        console.log($(this).attr('href'));
         if($(this).attr('href')&&$(window).width()<680){
             $('#hide').slideToggle();
         }
