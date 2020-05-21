@@ -1,3 +1,34 @@
+
+//menu responsive control
+$(document).ready(
+    function(){
+    //slidedown
+    $('.topnav>.has-dropdown').click(
+            function(){
+            $(this).find('.main-menu-dropdown').slideToggle();
+            $(this).find('.main-menu-dropdown>li>a').css("float", "none");
+            $(this).siblings().find('.main-menu-dropdown').slideUp();
+    });
+    $('.topnav>li').click(
+        function(){
+            $(this).siblings('.has-dropdown').find('.main-menu-dropdown').slideUp();
+        }
+    );
+    //responsive 
+    $('#menu_btn').click(function(){
+        $('#hide').slideToggle();            
+        $('.topnav').addClass('responsive');
+    }); 
+    $(window).resize(function(){
+        if($(window).width()> 680){
+            $('#hide').css('display','inherit');
+            $('.topnav').removeClass('responsive');
+        }}
+    );
+
+    });
+
+//map control
 function toggle(a) {
     var x = a;
     var b = a.innerHTML;
@@ -13,6 +44,7 @@ function toggle(a) {
         x.nextElementSibling.style.display = 'none';
     }
 }
+
 
 var map;
 var markers;
