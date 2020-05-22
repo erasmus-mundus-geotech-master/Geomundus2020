@@ -13,6 +13,7 @@
     <!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
     <link rel="shortcut icon" href="https://cdn2.iconfinder.com/data/icons/circle-icons-1/64/globe-24.png" />
     <link rel="stylesheet" href="assets/css/main.css" />
+    
     <!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
     <!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 
@@ -31,8 +32,8 @@
 
 
 
-    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
-
+    <!-- <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script> -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB1K1qI88SQ1rk9N6zQ7yHk8vDnm_ldINc"></script>
     <script src="js/main.js"></script>
     <script src="js/includeHTML.js"></script>
@@ -67,39 +68,42 @@
 </head>
 
 <body onload="initMap()">
+    <!--<nav>-->
     <ul class="topnav" id="hide">
-        <li class="has-dropdown "><a href="#header" onclick="display_inline()">Home</a>
+        <li class="has-dropdown"><a>Home</a>
             <ul class="main-menu-dropdown">
-                <li><a href="#info" onclick="display_inline()">Information</a></li>
-                <li><a href="#footer" onclick="display_inline()">History</a></li>
+                <li><a href="#info" >Information</a></li>
+                <li><a href="#footer" >History</a></li>
             </ul>            
         </li>
-        <li class="has-dropdown"><a href="#programme" onclick="display_inline()">Programme</a>
+        <li class="has-dropdown"><a>Programme</a>
             <ul class="main-menu-dropdown">
-                <li><a href="#speakers" onclick="display_inline()">Speakers</a></li>
+                <li><a href="#programme" >Schedule</a></li>
+                <li><a href="#speakers" >Speakers</a></li>
             </ul>
         </li>
-        <li><a href="#registration" onclick="display_inline()">Registration</a></li>
-        <li><a href="#submission" onclick="display_inline()">Papers and Posters Submission</a></li>
-        <!-- <li><a href="#ten" onclick="display_inline()">Submission</a></li> -->
-        <li class="has-dropdown"><a href="#location" onclick="display_inline()">Location</a>
+        <li><a href="#registration" >Registration</a></li>
+        <li><a href="#submission" >Papers and Posters Submission</a></li>
+        <!-- <li><a href="#ten" >Submission</a></li> -->
+        <li class="has-dropdown"><a>Location</a>
             <ul class="main-menu-dropdown">
-                <li><a href="#map_section" onclick="display_inline()">Map</a></li>
+                <li><a href="#location" >Location</a></li>
+                <li><a href="#map_section" >Map</a></li>
             </ul>
         </li>
-        <li><a href="#sponsors" onclick="display_inline()">Sponsors</a></li>
-        <li class="has-dropdown"><a href="#about" onclick="display_inline()">About us</a>
+        <li><a href="#sponsors" >Sponsors</a></li>
+        <li class="has-dropdown"><a>About us</a>
             <ul class="main-menu-dropdown">
-                <li><a href="#about" onclick="display_inline()">The Team</a></li>
-                <li><a href="#contact" onclick="display_inline()">Contact</a></li>
+                <li><a href="#about" >The Team</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
-        </li>
-        <li class="icon">
-            <a style="font-size:15px;" onclick="myFunction()">☰</a>
         </li>
     </ul>
-
-     <script>
+    <ul class="mobile_menu">
+    <li class="icon">
+        <a class="icon" style="font-size:15px;" id='menu_btn'>☰</a>
+    </li></ul>
+     <!-- <script>
         function myFunction() {
             document.getElementsByClassName("topnav")[0].classList.toggle("responsive");
             document.getElementById("hide").style.display = 'block';
@@ -110,9 +114,8 @@
                 document.getElementsByClassName("topnav")[0].classList.toggle("responsive");
             }
         }
-    </script>
+    </script> -->
     <!--</nav>-->
-
    
 
 
@@ -559,11 +562,18 @@
                 </p>
             </div>
             <div>
-                <h2 id="fromOther" onclick="toggle(this)">+ Other Transportation:</h2>
+                <h2 id="fromOther" onclick="toggle(this).children()">+ Other Transportation:</h2>
                 <p style="display:none;">
-                    ⋄ Frankfurt (FRA), - 4 hours by train</br>
-                    ⋄ Cologne – 2-3 Hours by train
-                </p>             
+                    <strong>By train</strong> </br>
+                    Different trains from all directions arrive at Münster Central Station in regular intervals the whole day. From the main station take the bus route 4 or 13 and exit at stop Mendelstraße. You can find train and bus connections on the 
+                    <a href="https://reiseauskunft.bahn.de//bin/query.exe/en?Z=Mendelstra%DFe%2C+M%FCnster+%28Westf%29"><b>Deutsche Bahn</b> </a> and 
+                    <a href="https://www.stadtwerke-muenster.de/privatkunden/busverkehr/fahrplanauskunft/efa/fahrplanauskunft.html?nameInfo_destination=24045991"><b>Stadtwerke Münster</b></a>
+                    websites.
+                </br>
+                    <strong>By plane</strong> </br>
+                    The international airport Münster/Osnabrück (FMO) at Greven (about 20 km north of Münster) is frequented of scheduled planes from many German cities and from London, Paris, and Zurich. Take bus route R 51, S 50, or D50 from FMO to Münster Central Station. Düsseldorf Airport is reachable from most European cities. You can reach Münster by different trains (IC, ICE, IR, RB- Already explained above). For most connections. They take about 1.5 to 2 hour.</br>
+                    <strong>In the building</strong> </br>
+                    The Institute for Geoinformatics has its rooms on the 1st and 2nd floor. The Secretariat is located on the 1st floor in room 123 in case you need any guidance.</br>
                 </p>
             </div>
 

@@ -107,7 +107,6 @@ body {
     height: 600px;
     width: 80%;
 }
-
 ul.topnav {
     position: fixed;
     list-style-type: none;
@@ -129,18 +128,13 @@ ul.topnav li.has-dropdown ul.main-menu-dropdown {
     list-style: none;
     margin: 0;
     padding: 0;
-    display: none;    
+    display: none;
     text-align:center;
-}
-
-ul.topnav li.has-dropdown:hover ul.main-menu-dropdown {
-    display: block;
 }
 
 ul.topnav li a {
     display: inline-block;   
-    color: #f2f2f2;
-    
+    color: #f2f2f2;    
     text-align: center;
     padding: 10px 10px;
     text-decoration: none;
@@ -149,34 +143,53 @@ ul.topnav li a {
 }
 
 ul.topnav li a:hover {
-    background-color: #4361C2;
-    
+    background-color: #4361C2;    
     text-shadow:#ffffff 0 0 0.2em;
 }
-
+ 
 ul.topnav li.icon {
+    display: none;
+} 
+.mobile_menu{
     display: none;
 }
 
 
 @media screen and (max-width:680px) {
-    ul.topnav li:not(:first-child) {
-        display: none;
-    }
-    ul.topnav li.icon {
+    .icon {
         float: right;
         display: inline-block;
     }
+    ul.topnav li:not(:first-child) {
+        display: none;
+    } 
+    .mobile_menu{
+    position: fixed;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    z-index: 9999;
+    width: 100%;
+    max-height: 100%;
+    background-color: #4FA49A;
+    color: #f2f2f2;
+    display: inline-block;   
+    text-align: center;
+    padding: 10px 10px;
+    text-decoration: none;
+    transition: 0.3s;
+    font-size: 17px;
 }
-
-@media screen and (max-width:680px) {
+.mobile_menu li a:hover{
+    background-color: #4361C2;    
+    text-shadow:#ffffff 0 0 0.2em;
+}
+    #hide{display: none;}
     ul.topnav.responsive {
-        position: fixed;
-    }
-    ul.topnav.responsive li.icon {
-        position: fixed;
-        right: 0;
-        top: 0;
+        position: fixed;      
+        top:40px;  
+        max-height: 80%;
+        overflow-y: auto;
     }
     ul.topnav.responsive li {
         float: none;
@@ -186,10 +199,18 @@ ul.topnav li.icon {
         display: block;
         text-align: left;
     }
+    ul.topnav.responsiv {
+        overflow-y:auto;
+    }
+    ul.topnav.responsive li.has-dropdown ul.main-menu-dropdown {
+        position:static;
+        padding: 10px 10px;
+    }
+
 }
 
 .active {
-    background-color: #4CAF50;
+    background-color:#4361C2;
 }
 
 article,
