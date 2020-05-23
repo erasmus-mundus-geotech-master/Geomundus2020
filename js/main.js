@@ -7,13 +7,13 @@ $(document).ready(
             function(){
             $(this).find('.main-menu-dropdown').slideToggle();
             $(this).find('.main-menu-dropdown>li>a').css("float", "none");
-            $(this).siblings().find('.main-menu-dropdown').slideUp();
     });
-    $('.topnav>li').click(
+    $('.topnav>li,.topnav>a').click(
         function(){
             $(this).siblings('.has-dropdown').find('.main-menu-dropdown').slideUp();
         }
     );
+    $('')
     //responsive 
     $('#menu_btn').click(function(){
         $('#hide').slideToggle();            
@@ -31,7 +31,13 @@ $(document).ready(
         if($(this).attr('href')&&$(window).width()<680){
             $('#hide').slideToggle();
         }
-    })
+    });
+    $('.mobile_menu_home').click(function(){
+        if($(window).width()<680){
+            $('#hide').slideUp();
+        }
+    });
+
     });
 
 //map control
@@ -55,7 +61,7 @@ function toggle(a) {
 var map;
 var markers;
 
-var WWUloc = new google.maps.LatLng(51.9693848, 7.5935798);
+var WWUloc = new google.maps.LatLng(51.9694086,7.5955773);
 var WeezeAirportLoc = new google.maps.LatLng(51.8081477, 6.3661199);
 var MünsterAirportLoc = new google.maps.LatLng(52.132938,7.6887554);
 var DusselAirportLoc = new google.maps.LatLng(51.7031027, 6.6679891);
