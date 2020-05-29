@@ -363,19 +363,18 @@ function setMapVisibility(itemClicked) {
             {}
     }
 }
-
-$(window).resize(function() {
-    google.maps.event.trigger(map, "resize");
-    map.setCenter(WWUloc);
-});
-window.onload = function initMap() {
+function initMap() {
     //document.getElementById('map_section').style.display = 'none'
     map = new google.maps.Map(document.getElementById('map'), {
         center: WWUloc,
         scrollwheel: false,
         zoom: 13
     });
-    
+
+$(window).resize(function() {
+    google.maps.event.trigger(map, "resize");
+    map.setCenter(WWUloc);
+});
 
     infoVenue = new google.maps.InfoWindow({
         content: contentWwu
