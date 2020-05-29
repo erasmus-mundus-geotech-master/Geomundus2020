@@ -1,8 +1,8 @@
 
-//menu responsive control
+//menu control
 $(document).ready(
     function(){
-    //slidedown
+    //menu open/close control
     $('.topnav>.has-dropdown').click(
             function(){
             $(this).find('.main-menu-dropdown').slideToggle();
@@ -13,7 +13,6 @@ $(document).ready(
             $(this).siblings('.has-dropdown').find('.main-menu-dropdown').slideUp();
         }
     );
-    $('')
     //responsive 
     $('#menu_btn').click(function(){
         $('#hide').slideToggle();            
@@ -369,8 +368,7 @@ $(window).resize(function() {
     google.maps.event.trigger(map, "resize");
     map.setCenter(WWUloc);
 });
-
-function initMap() {
+window.onload = function initMap() {
     //document.getElementById('map_section').style.display = 'none'
     map = new google.maps.Map(document.getElementById('map'), {
         center: WWUloc,

@@ -121,8 +121,10 @@ ul.topnav {
 ul.topnav li {
     float: left;
 }
-
-ul.topnav li.has-dropdown ul.main-menu-dropdown {
+ul.topnav li.has-dropdown{
+    cursor: pointer;
+}
+ul.main-menu-dropdown {
     background-color: rgba(78, 164, 154, 0.9);
     position: absolute;
     list-style: none;
