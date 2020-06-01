@@ -107,21 +107,48 @@ body {
     height: 600px;
     width: 80%;
 }
-ul.topnav {
+ul.topnav,.mobile_menu {
     position: fixed;
     list-style-type: none;
     margin: 0;
+    top:78px;
     padding: 0;
     z-index: 999;
     width: 100%;
     max-height: 100%;
     background-color: #4FA49A;
+    
 }
-
+.alertbanner{
+    position: fixed;
+    max-width: 100%;
+    top: 0;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    padding-left:2%;
+    padding-right: 4%;
+    z-index: 999;
+    display: block;
+    background-color: tomato;
+    color:white;
+    white-space: normal;
+}
+.alert_content{
+    max-width: 95%;
+}
+.close{
+    position: fixed;
+    font-size: 30px;
+    top:2%;
+    right:2%;
+}
+.close:hover,.close>a:hover{
+    color: rgb(58, 47, 58);
+}
 ul.topnav li {
     float: left;
 }
-ul.topnav li.has-dropdown{
+ul.topnav li.has-dropdown,#menu_btn{
     cursor: pointer;
 }
 ul.main-menu-dropdown {
@@ -178,15 +205,10 @@ ul.topnav li.icon {
     ul.topnav li:not(:first-child) {
         display: none;
     } 
+    .alert_content{
+        max-width: 90%;
+    }
     .mobile_menu{
-    position: fixed;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    z-index: 999;
-    width: 100%;
-    max-height: 100%;
-    background-color: #4FA49A;
     color: #f2f2f2;
     display: inline-block;   
     text-align: center;
@@ -3280,20 +3302,20 @@ body.is-loading #header:after {
     }
     /* Header */
     #header {
-        padding: 8em 3em 8em 3em;
+        padding: 5.5em 3em 8em 3em;
     }
     /* Footer */
     #footer {
         padding: 5em 3em 5em 3em;
     }
     /* One */
-    #one {
+    #info {
         text-align: center;
     }
     /* Two */
-    #two {
+    #speakers {
         text-align: center;
-    }
+    }    
 }
 
 
@@ -3350,15 +3372,16 @@ body.is-loading #header:after {
     }
     /* Header */
     #header {
-        padding: 4em 3em 4em 3em;
+        padding: 6em 3em 4em 3em;
     }
     #header .actions {
-        margin: 2em 0 0 0;
+        margin: 4em 0 0 0;
     }
     /* Footer */
     #footer {
         padding: 3em 1.5em 3em 1.5em;
     }
+
 }
 
 
@@ -3404,7 +3427,7 @@ body.is-loading #header:after {
     }
     /* Header */
     #header {
-        padding: 4em 2em 4em 2em;
+        padding: 6em 2em 4em 2em;
     }
     #header br {
         display: none;

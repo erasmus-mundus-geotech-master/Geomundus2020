@@ -10,13 +10,9 @@
     <title>GeoMundus 2020</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
     <link rel="shortcut icon" href="https://cdn2.iconfinder.com/data/icons/circle-icons-1/64/globe-24.png" />
     <link rel="stylesheet" href="assets/css/main.css" />
     
-    <!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
-    <!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
-
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-138647151-1"></script>
     <script>
@@ -66,6 +62,11 @@
 
 <body onload="initMap()">
     <!--<nav>-->
+    <div class="alertbanner">
+            <div class="alert_content">Due to the current ongoing scenario of Covid-19, physical attendees must ensure they comply with local regulations including social distancing and appropriate precautions. The situation is being monitored and constantly updated.</div>
+            <div class="close"><a href=""><span class="icon fa-window-close"></span></a></div>        
+    </div>
+
     <ul class="topnav" id="hide">
         <a href="#header"><img class='menu_home' src="images/geomundus2020_logo.png" alt=""></a>
         <li class="has-dropdown"><a>Intro</a>
@@ -82,7 +83,6 @@
         </li>
         <li><a href="#registration">Registration</a></li>
         <li><a href="#submission" >Papers and Posters Submission</a></li>
-        <!-- <li><a href="#ten" >Submission</a></li> -->
         <li class="has-dropdown"><a>Location</a>
             <ul class="main-menu-dropdown">
                 <li><a href="#location" >Location</a></li>
@@ -102,6 +102,8 @@
     <li class="icon">
         <a style="font-size:20px;" id='menu_btn'>☰</a>
     </li></ul>
+  
+    
      <!-- <script>
         function myFunction() {
             document.getElementsByClassName("topnav")[0].classList.toggle("responsive");
@@ -601,7 +603,7 @@
         <div class="container" style="text-align: justify;">
 
             <p>
-                Three best paper submissions from students will be awarded <b>travel grants to GeoMundus 2020 worth up to 500 EUR.</b> The grant covers hotel accommodation of up to 200 EUR and travel costs of up to 300 EUR. Note that travel and accommodation
+                Three best paper submissions from students will be awarded <b>travel grants to GeoMundus 2020 worth up to 500 EUR.</b> The grant covers hotel accommodation of up to 200 EUR and travel costs of up to 300 EUR. Note that only travel and accommodation
                 costs supported by documentation will be reimbursed. This grant is ONLY FOR STUDENTS. Those who are willing to apply for the grant should be a current student (till the date of the conference) enrolled in University/College. They should
                 provide documents supporting their current student status from their respective University/College during the paper submission process.
             </p>
