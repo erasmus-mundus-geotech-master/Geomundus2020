@@ -1,38 +1,67 @@
 
-//menu responsive control
+//menu control
 $(document).ready(
     function(){
-    //slidedown
+    //menu open/close control
     $('.topnav>.has-dropdown').click(
             function(){
             $(this).find('.main-menu-dropdown').slideToggle();
             $(this).find('.main-menu-dropdown>li>a').css("float", "none");
-            $(this).siblings().find('.main-menu-dropdown').slideUp();
     });
-    $('.topnav>li').click(
+    $('.topnav>li,.topnav>a').click(
         function(){
             $(this).siblings('.has-dropdown').find('.main-menu-dropdown').slideUp();
         }
     );
+    topmenu();    
+    function topmenu(){    
+        let h = $('.alertbanner').css('height');
+        if (h!==undefined) {
+            $('.topnav,.mobile_menu').css('top',h);
+            $('#header').css('margin-top',h);
+
+        }
+        else
+            {$('.topnav,.mobile_menu').css('top',0);
+            $('#header').css('margin-top',0);}
+
+    }
     //responsive 
     $('#menu_btn').click(function(){
         $('#hide').slideToggle();            
         $('.topnav').addClass('responsive');
     }); 
+    //listen resize 
     $(window).resize(function(){
         if($(window).width()> 680){
             $('#hide').css('display','inherit');
             $('.topnav').removeClass('responsive');
         }
+    //listen topmenu height
+        topmenu();
     }        
     );
-
+    $('.mobile_menu_home').click(function(){
+        if($(window).width()<680){
+            $('#hide').slideUp();
+        }
+    });    
+    //slideup the menu when navigate to the anchor
     $('.topnav').find('a').click(function(){
         if($(this).attr('href')&&$(window).width()<680){
             $('#hide').slideToggle();
         }
-    })
     });
+    //close alert
+    $('.close').click(function(event){
+        event.preventDefault();
+        // $('.alertbanner').css('transition-duration','3s');
+        // $('.alertbanner').css('transition-timing-function','ease-out');
+        $('.alertbanner').remove();
+        topmenu();
+    })
+
+});
 
 //map control
 function toggle(a) {
@@ -55,7 +84,7 @@ function toggle(a) {
 var map;
 var markers;
 
-var WWUloc = new google.maps.LatLng(51.9693848, 7.5935798);
+var WWUloc = new google.maps.LatLng(51.9694086,7.5955773);
 var WeezeAirportLoc = new google.maps.LatLng(51.8081477, 6.3661199);
 var MünsterAirportLoc = new google.maps.LatLng(52.132938,7.6887554);
 var DusselAirportLoc = new google.maps.LatLng(51.7031027, 6.6679891);
@@ -358,12 +387,6 @@ function setMapVisibility(itemClicked) {
             {}
     }
 }
-
-$(window).resize(function() {
-    google.maps.event.trigger(map, "resize");
-    map.setCenter(WWUloc);
-});
-
 function initMap() {
     //document.getElementById('map_section').style.display = 'none'
     map = new google.maps.Map(document.getElementById('map'), {
@@ -371,7 +394,11 @@ function initMap() {
         scrollwheel: false,
         zoom: 13
     });
-    
+
+$(window).resize(function() {
+    google.maps.event.trigger(map, "resize");
+    map.setCenter(WWUloc);
+});
 
     infoVenue = new google.maps.InfoWindow({
         content: contentWwu

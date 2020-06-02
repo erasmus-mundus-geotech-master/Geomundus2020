@@ -10,13 +10,9 @@
     <title>GeoMundus 2020</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
     <link rel="shortcut icon" href="https://cdn2.iconfinder.com/data/icons/circle-icons-1/64/globe-24.png" />
     <link rel="stylesheet" href="assets/css/main.css" />
     
-    <!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
-    <!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
-
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-138647151-1"></script>
     <script>
@@ -30,9 +26,6 @@
         gtag('config', 'UA-138647151-1');
     </script>
 
-
-
-    <!-- <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script> -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB1K1qI88SQ1rk9N6zQ7yHk8vDnm_ldINc"></script>
     <script src="js/main.js"></script>
@@ -69,8 +62,14 @@
 
 <body onload="initMap()">
     <!--<nav>-->
+    <div class="alertbanner">
+            <div class="alert_content">Due to the current ongoing scenario of Covid-19, physical attendees must ensure they comply with local regulations including social distancing and appropriate precautions. The situation is being monitored and constantly updated.</div>
+            <div class="close"><a href=""><span class="icon fa-window-close"></span></a></div>        
+    </div>
+
     <ul class="topnav" id="hide">
-        <li class="has-dropdown"><a>Home</a>
+        <a href="#header"><img class='menu_home' src="images/geomundus2020_logo.png" alt=""></a>
+        <li class="has-dropdown"><a>Intro</a>
             <ul class="main-menu-dropdown">
                 <li><a href="#info" >Information</a></li>
                 <li><a href="#footer" >History</a></li>
@@ -82,9 +81,8 @@
                 <li><a href="#speakers" >Speakers</a></li>
             </ul>
         </li>
-        <li><a href="#registration" >Registration</a></li>
+        <li><a href="#registration">Registration</a></li>
         <li><a href="#submission" >Papers and Posters Submission</a></li>
-        <!-- <li><a href="#ten" >Submission</a></li> -->
         <li class="has-dropdown"><a>Location</a>
             <ul class="main-menu-dropdown">
                 <li><a href="#location" >Location</a></li>
@@ -100,9 +98,12 @@
         </li>
     </ul>
     <ul class="mobile_menu">
+        <a href="#header"><img class='mobile_menu_home' src="images/geomundus2020_logo.png" alt=""></a>
     <li class="icon">
-        <a class="icon" style="font-size:15px;" id='menu_btn'>☰</a>
+        <a style="font-size:20px;" id='menu_btn'>☰</a>
     </li></ul>
+  
+    
      <!-- <script>
         function myFunction() {
             document.getElementsByClassName("topnav")[0].classList.toggle("responsive");
@@ -119,7 +120,7 @@
    
 
 
-    <!-- Header: GEOMUNDUS PRESENTATION -->
+    <!-- Header: GeoMundus PRESENTATION -->
     <section id="header" align="center">
         <div class="inner">
             <div align="center">
@@ -145,7 +146,7 @@
 
     </section>
 
-    <!-- One: WHAT IS GEOMUNDUS -->
+    <!-- One: WHAT IS GeoMundus -->
     <section id="info" class="main style1">
         <div class="container">
             <div class="row 150%">
@@ -155,10 +156,10 @@
                         </h2>
                     </header>
                     <p>
-                        GeoMundus is a free international Conference organized <b>by students for students</b>.The organizing committee is the students from the <a href="https://www.mastergeotech.info/" style="color: #6bd4c8" target="_blank">Erasmus Mundus Master's of Science in Geospatial Technologies</a>.
+                        GeoMundus is a free international Conference organized <b>by students for students</b>. The organizing committee is the students from the <a href="http://mastergeotech.info/" class ='intext_link' target="_blank">Erasmus Mundus Master's of Science in Geospatial Technologies</a>.
                         The conference aims to share cutting-edge scientific research, knowledge, and skills in the fields of Geospatial Technologies, Geoinformatics, and Geosciences, including but not limited to geographic information systems and sciences,
                         spatial cognition, geography, and spatial data sciences.
-                        </br>Please see <a href="#programme" style="color: #6bd4c8">Programme Section</a> for more detailed information.
+                        </br>Please see <a href="#programme" class ='intext_link'>Programme Section</a> for more detailed information.
                     </p>
                     <!--
                     <iframe src="https://ivv6.maps.arcgis.com/apps/MapJournal/index.html?appid=c0d6351b6c6b4541bf42c7be536bf4c1" alt="StoryMap" style="width: 100%; height:600px"></iframe>
@@ -169,7 +170,7 @@
                     </header>
                     <p>
                         GeoMundus is an opportunity to learn about and share scientific research, knowledge, and skills with other students and researchers of all things ‘Geo’. Every year it will give participants the chance to learn about technological advancements of GI, research
-                        activities and applications on geospatial technologies in today’s world. GeoMundus is unique, featuring workshops where participants can experience first-hand the future of the field as well as a career session specially designed
+                        activities and applications of geospatial technologies in today’s world. GeoMundus is unique, featuring workshops where participants can experience first-hand the future of the field as well as a career session specially designed
                         for students interested in a geospatial career.
                     </p>
 
@@ -457,31 +458,31 @@
                             tweenToNewSpeed(controller.fullSpeed);
                         });
                     </script>
-                    <div id="scroller" style=" max-width:100%; width: 550px; height: 400px;">
+                    <div id="scroller" style=" max-width:100%; width: auto; height: 400px;">
                         <div class="innerScrollArea">
-                            <ul>
+                            <ul class='location_ul'>
                                 <!-- Define photos here -->
-                                <li style="margin-top: 5%;"><img src="images/image1.jpg" width="500" height="400"></li>
-                                <!-- <li style="left: 600px;"><img src="images/image6.jpg" width="600" height="400"></li>
-                                <li style="left: 1200px;"><img src="images/image7.jpg" width="600" height="400"></li>
-                                <li style="left: 1800px;"><img src="images/image8.jpg" width="600" height="400"></li>
-                                <li style="left: 2400px;"><img src="images/image5.jpg" width="600" height="400"></li>
-                                <li style="left: 3000px;"><img src="images/image6.jpg" width="600" height="400"></li>
-                                <li style="left: 3600px;"><img src="images/image7.jpg" width="600" height="400"></li>
-                                <li style="left: 4200px;"><img src="images/image8.jpg" width="600" height="400"></li> -->
+                                <li style="left: 0px;"><img src="images/image1.jpg"></li>
+                                <li style="left: 533px;"><img src="images/muenster(14).jpg" ></li>
+                                <li style="left: 833px;"><img src="images/muenster(20).jpg" ></li>
+                                <li style="left: 1366px;"><img src="images/muenster(15).jpg" ></li>
+                                <li style="left: 1899px;"><img src="images/muenster(17).jpg" ></li>
+                                <li style="left: 2433px;"><img src="images/muenster(18).jpg" ></li>
+                                <li style="left: 2733px;"><img src="images/muenster(19).jpg" ></li>
+                                <li style="left: 3266px;"><img src="images/muenster(16).jpg" ></li>
                             </ul>
                         </div>
                     </div>
                 </div>
                 <div class="6u$ 12u$(medium)">
                     <header align="center" class="major">
-                        <h2 align="center"> <a href="https://www.uni-muenster.de/en/" style="color: #6bd4c8" target="_blank">  University of Münster</a></h2>
+                        <h2 align="center"> <a href="https://www.uni-muenster.de/en/" class ='intext_link' target="_blank">  University of Münster</a></h2>
                         <p align="center"> IFGI-Institute for Geoinformatics</p>
                         <p>
                             <h2>Münster</h2>
                         </p>
                     </header>
-                    <p>GeoMundus 2020 will be held will be held in Münster, a multi-faceted city. It is a city of science and 
+                    <p>GeoMundus 2020 will be held in Münster, a multi-faceted city. It is a city of science and 
                         learning, the City of Westphalian Peace, the capital city of bicycles and Germany’s Climate Protection 
                         Capital. The venue is Institute for Geoinformatics (IFGI). The Institute offers bachelor, master and 
                         PhD degrees in geoinformatics with research focus in areas of modelling spatio-temporal processes, 
@@ -535,45 +536,23 @@
     <section id="howto" class="main style2 special">
         <div style="text-align: left;margin-left: 10%;">
             <b>
-                <h2>How to get to University of Münster (IFGI)</h2></b>
+                <h2>How to get to Münster</h2></b>
 
             <div>
-                <h2 id="fromMünster" onclick="toggle(this)">+ From Münster</h2>
+                <h2 id="ByPlane" onclick="toggle(this)">+ By plane</h2>
                 <p style="display:none;">
-                    Makes sense if you have a direct flight or a cheap connection flight – You can pick a Bus right from the airport to the city center.
+                     The international airport <b>Münster/Osnabrück (FMO)</b> at Greven (about 20 km north of Münster) is frequented of scheduled planes from many German cities and from London, Paris, and Zurich. Take bus route R 51, S 50, or D50 from FMO to Münster Central Station. <b>Düsseldorf Airport </b>is reachable from most European cities. You can reach Münster by different trains (IC, ICE, IR, RB- Already explained above). For most connections. They take about 1.5 to 2 hour.
                     </br>
                 </p>
             </div>
             <div>
-                <h2 id="fromDusseldorf " onclick="toggle(this)">+ From Dusseldorf</h2>
+                <h2 id="ByTrain " onclick="toggle(this)">+ By Train</h2>
                 <p style="display:none;">
-                    Dusseldorf is a city close to Münster – A 90 minutes train from Dusseldorf to Münster. In Dusseldorf, the easiest way to reach Dusseldorf Hauptbahnhof (the main railway station in central Dusseldorf) is by taking S11 to Bergisch Gladbach via Dusseldorf Central Railway Station.
-                    </br>Trains depart at Dusseldorf Airport Terminal Train Station, in Terminal C, this station is located below Terminal C and can be reached via a moving walkway from the arrivals area. Total travel time is 7 minutes
-                    </br>
-                    <a target="_blank" href="https://www.thetrainline.com/en/train-times/dusseldorf-flughafen-terminal-to-munster-westf-hbf?gclid=CjwKCAjwte71BRBCEiwAU_V9h1JO9zO2zNKNFYyQ16yD2DZRgUtZNRuGGGj73tl3PY-yg1sTtRXsahoC8TUQAvD_BwE&gclsrc=aw.ds"> <u><b>Check available trains and price</b></u></a>
-                    </br>
-                    
-                </p>
-            </div>
-            <div>
-                <h2 id="fromWeeze" onclick="toggle(this)">+ From airport Weeze</h2>
-                <p style="display:none;">
-                    Might be a little tricky with public Transport.</br>
-                </p>
-            </div>
-            <div>
-                <h2 id="fromOther" onclick="toggle(this).children()">+ Other Transportation:</h2>
-                <p style="display:none;">
-                    <strong>By train</strong> </br>
                     Different trains from all directions arrive at Münster Central Station in regular intervals the whole day. From the main station take the bus route 4 or 13 and exit at stop Mendelstraße. You can find train and bus connections on the 
                     <a href="https://reiseauskunft.bahn.de//bin/query.exe/en?Z=Mendelstra%DFe%2C+M%FCnster+%28Westf%29"><b>Deutsche Bahn</b> </a> and 
                     <a href="https://www.stadtwerke-muenster.de/privatkunden/busverkehr/fahrplanauskunft/efa/fahrplanauskunft.html?nameInfo_destination=24045991"><b>Stadtwerke Münster</b></a>
                     websites.
-                </br>
-                    <strong>By plane</strong> </br>
-                    The international airport Münster/Osnabrück (FMO) at Greven (about 20 km north of Münster) is frequented of scheduled planes from many German cities and from London, Paris, and Zurich. Take bus route R 51, S 50, or D50 from FMO to Münster Central Station. Düsseldorf Airport is reachable from most European cities. You can reach Münster by different trains (IC, ICE, IR, RB- Already explained above). For most connections. They take about 1.5 to 2 hour.</br>
-                    <strong>In the building</strong> </br>
-                    The Institute for Geoinformatics has its rooms on the 1st and 2nd floor. The Secretariat is located on the 1st floor in room 123 in case you need any guidance.</br>
+                    
                 </p>
             </div>
 
@@ -610,12 +589,13 @@
             </ul>
             Congratulations!
             -->
-            <p>
+            <!--submission button/link-->
+            <!-- <p> 
                 <ul class="actions uniform" style="text-align: center;">
                     <a class="button special" id='bt1' value='Show Layer' style="background-color:darkred;color: white!important;">Paper and Poster Submission is Closed
                     </a>
                 </ul>
-            </p>
+            </p> -->
             <br>
         </div>
     </section>
@@ -623,7 +603,7 @@
         <div class="container" style="text-align: justify;">
 
             <p>
-                Three best paper submissions from students will be awarded <b>travel grants to GeoMundus 2020 worth up to 500 EUR.</b> The grant covers hotel accommodation of up to 200 EUR and travel costs of up to 300 EUR. Note that travel and accommodation
+                Three best paper submissions from students will be awarded <b>travel grants to GeoMundus 2020 worth up to 500 EUR.</b> The grant covers hotel accommodation of up to 200 EUR and travel costs of up to 300 EUR. Note that only travel and accommodation
                 costs supported by documentation will be reimbursed. This grant is ONLY FOR STUDENTS. Those who are willing to apply for the grant should be a current student (till the date of the conference) enrolled in University/College. They should
                 provide documents supporting their current student status from their respective University/College during the paper submission process.
             </p>
@@ -632,7 +612,7 @@
                 <b>Please note that GeoMundus <strong>does not provide</strong> invitations and <strong>does not support </strong>Visa Processes.</b>
             </p>
             <p>
-                Selected authors will be notified by email and accepted short papers and posters will be displayed under section "Accepted papers and posters" on the geomundus website. The presentation will be for 15 minutes followed by a 5 minutes question-answer session.
+                Selected authors will be notified by email and accepted short papers and posters will be displayed under section "Accepted papers and posters" on the GeoMundus website. The presentation will be for 15 minutes followed by a 5 minutes question-answer session.
                 The official language of the conference is English.
             </p>
             <p>
@@ -673,7 +653,7 @@
                 </div>
                 <div class="4u 12u$(medium)" style="text-align: left;">
                     <h4>Twitter Feed</h4>
-                    <a class="twitter-timeline" data-width="300" data-height="300" href="https://twitter.com/geomundus?ref_src=twsrc%5Etfw">Tweets by geomundus</a>
+                    <a class="twitter-timeline" data-width="300" data-height="300" href="https://twitter.com/GeoMundus?ref_src=twsrc%5Etfw">Tweets by GeoMundus</a>
                     <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
                 </div>
             </div>
@@ -687,13 +667,13 @@
             <header class="major">
                 <h2>Sponsors & Partners</h2>
             </header>
-            <p>Geomundus is looking for sponsors and partners from all the spatial, technological, public or private, scientific, governmental, academic and more fields. We will be thrilled to have all the support and participation in this international
+            <p>GeoMundus is looking for sponsors and partners from all the spatial, technological, public or private, scientific, governmental, academic and more fields. We will be thrilled to have all the support and participation in this international
                 event.
             </p>
             <p>
 
-                Please feel free to contact the budget team at <strong><a href="mailto:budget@geomundus.org">budget@geomundus.org</a></strong> for more information on how to help and contribute! We will glad to hear all the wishes to sponsor the 2020
-                GeoMundus conference and future years. We are looking for sponsors and partners.</p>
+                Please feel free to contact the budget team at <strong><a href="mailto:budget@geomundus.org">budget@geomundus.org</a></strong> for more information on how to help and contribute! We will be glad to hear all the wishes to sponsor the 2020
+                GeoMundus conference and future years. </p>
             </p>
 
             <h2>Partners</h2>
@@ -701,12 +681,12 @@
             <div class="row row-centered justify-content-center">
                 <div class="col img-circle-div col-centered">
                     <a href="https://www.isegi.unl.pt/" target="_blank">
-                        <img class="img-circle" src="https://geomundus.org/2015/img/nova.png" width="150" height="150">
+                        <img class="img-circle" src="https://GeoMundus.org/2015/img/nova.png" width="150" height="150">
                     </a>
                 </div>
                 <div class="col img-circle-div col-centered">
                     <a href="https://geotec.uji.es/" target="_blank">
-                        <img class="img-circle" src="https://geomundus.org/2015/img/uji.png" width="150" height="150">
+                        <img class="img-circle" src="https://GeoMundus.org/2015/img/uji.png" width="150" height="150">
                     </a>
                 </div>
                 <div class="col img-circle-div col-centered">
