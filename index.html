@@ -69,28 +69,28 @@
         <a href="#header"><img class='menu_home' src="images/geomundus2020_logo.png" alt=""></a>
         <li class="has-dropdown"><a>Intro</a>
             <ul class="main-menu-dropdown">
-                <li><a href="#info" >Information</a></li>
-                <li><a href="#footer" >History</a></li>
+                <li><a href="#info">Information</a></li>
+                <li><a href="#footer">History</a></li>
             </ul>            
         </li>
         <li class="has-dropdown"><a>Programme</a>
             <ul class="main-menu-dropdown">
-                <li><a href="#programme" >Schedule</a></li>
-                <li><a href="#speakers" >Speakers</a></li>
+                <li><a href="#programme" onclick="window.open('program.html')">Schedule</a></li>
+                <li><a href="#speakers" onclick="window.open('speakers.html')">Speakers</a></li>
             </ul>
         </li>
-        <li><a href="#registration">Registration</a></li>
-        <li><a href="#submission" >Papers and Posters Submission</a></li>
+        <li><a href="#registration" onclick="window.open('registration.html')">Registration</a></li>
+        <li><a href="#submission" onclick="window.open('submission.html')">Papers and Posters Submission</a></li>
         <li class="has-dropdown"><a>Location</a>
             <ul class="main-menu-dropdown">
-                <li><a href="#location" >Location</a></li>
-                <li><a href="#map_section" >Map</a></li>
+                <li><a href="#location">Location</a></li>
+                <li><a href="#map_section">Map</a></li>
             </ul>
         </li>
         <li><a href="#sponsors" >Sponsors</a></li>
         <li class="has-dropdown"><a>About us</a>
             <ul class="main-menu-dropdown">
-                <li><a href="#about" >The Team</a></li>
+                <li><a href="#about" onclick="window.open('team.html')">The Team</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </li>
@@ -172,12 +172,6 @@
                         for students interested in a geospatial career.
                     </p>
 
-                    <header>
-                        <h2>Who should participate in GeoMundus 2020?<br /></h2>
-                    </header>
-
-                    <p>Everyone who is curious about geospatial technologies and their applications. We especially welcome students, researchers, industry leaders, and interested members of the public. It is not only a great opportunity to learn, but also
-                        to network with the brightest minds in this exciting field.
                         <header id="galleryheader">
                             <h2>2019 Conference photos</h2>
                         </header>
@@ -386,8 +380,6 @@
                         </div>
                         <!-- <iframe width="100%" height="500" src="https://www.youtube.com/embed/iE3QapLTNuM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
                         <!-- <br/><br/><br/> Registration is <strong>free</strong>, so <a href="#registration" style="color:red;">sign up now!</a> -->
-                    </p>
-
                 </div>
             </div>
         </div>
@@ -400,10 +392,23 @@
             });
         </script>
     </section>
-    <!--2020 SPEAKERS -->
-    <section id="speakers" class="main style2" w3-include-html='speakers.html'></section>
 
-    <!-- LOCATION -->
+    <section class="main style2 special">
+        <div style="text-align: left;margin-left: 10%;">
+        <header>
+            <h2>Who should participate in GeoMundus 2020?</h2>
+        </header>
+        <p>Everyone who is curious about geospatial technologies and their applications. We especially welcome students, researchers, industry leaders, and interested members of the public. It is not only a great opportunity to learn, but also to network with the brightest minds in this exciting field.
+        </p>
+        </div>
+    </section>
+
+
+    <!--2020 SPEAKERS - Uncomment for embedding in homepage-->
+    <!--<section id="speakers" class="main style2" w3-include-html='speakers.html'></section>-->
+
+
+    <!--LOCATION-->
     <section id="location" class="main style1">
         <div class="container">
             <div class="row 150%">
@@ -455,23 +460,23 @@
                             setInterval(doScroll, 20);
                             tweenToNewSpeed(controller.fullSpeed);
                         });
-                    </script>
-                    <div id="scroller" style=" max-width:100%; width: auto; height: 400px;">
-                        <div class="innerScrollArea">
-                            <ul class='location_ul'>
-                                <!-- Define photos here -->
-                                <li style="left: 0px;"><img src="images/image1.jpg"></li>
-                                <li style="left: 533px;"><img src="images/muenster(14).jpg" ></li>
-                                <li style="left: 833px;"><img src="images/muenster(20).jpg" ></li>
-                                <li style="left: 1366px;"><img src="images/muenster(15).jpg" ></li>
-                                <li style="left: 1899px;"><img src="images/muenster(17).jpg" ></li>
-                                <li style="left: 2433px;"><img src="images/muenster(18).jpg" ></li>
-                                <li style="left: 2733px;"><img src="images/muenster(19).jpg" ></li>
-                                <li style="left: 3266px;"><img src="images/muenster(16).jpg" ></li>
-                            </ul>
+                        </script>
+                        <div id="scroller" style=" max-width:100%; width: auto; height: 400px;">
+                            <div class="innerScrollArea">
+                                <ul class='location_ul'>
+                                    <!-- Define photos here -->
+                                    <li style="left: 0px;"><img src="images/image1.jpg"></li>
+                                    <li style="left: 533px;"><img src="images/muenster(14).jpg" ></li>
+                                    <li style="left: 833px;"><img src="images/muenster(20).jpg" ></li>
+                                    <li style="left: 1366px;"><img src="images/muenster(15).jpg" ></li>
+                                    <li style="left: 1899px;"><img src="images/muenster(17).jpg" ></li>
+                                    <li style="left: 2433px;"><img src="images/muenster(18).jpg" ></li>
+                                    <li style="left: 2733px;"><img src="images/muenster(19).jpg" ></li>
+                                    <li style="left: 3266px;"><img src="images/muenster(16).jpg" ></li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
-                </div>
                 <div class="6u$ 12u$(medium)">
                     <header align="center" class="major">
                         <h2 align="center"> <a href="https://www.uni-muenster.de/en/" class ='intext_link' target="_blank">  University of Münster</a></h2>
@@ -537,10 +542,10 @@
                 <h2>How to get to Münster</h2></b>
 
             <div>
-                <h2 id="ByPlane" onclick="toggle(this)">+ By plane</h2>
+                <h2 id="ByPlane" onclick="toggle(this)">+ By Plane</h2>
                 <p style="display:none;">
                      The international airport <b>Münster/Osnabrück (FMO)</b> at Greven (about 20 km north of Münster) is frequented of scheduled planes from many German cities and from London, Paris, and Zurich. Take bus route R 51, S 50, or D50 from FMO to Münster Central Station. <b>Düsseldorf Airport </b>is reachable from most European cities. 
-			You can reach Münster by different trains (IC, ICE, IR, RB- Already explained above).For most connections, travel time is approximately 1.5 to 2 hours.
+            You can reach Münster by different trains (IC, ICE, IR, RB- Already explained above).For most connections, travel time is approximately 1.5 to 2 hours.
                     </br>
                 </p>
             </div>
@@ -557,83 +562,20 @@
 
         </div>
     </section>
-    <!---->
-    <!-- PROGRAM AND SCHEDULE -->
-    <section id="programme" class="main style1" w3-include-html="program.html"></section>
+
+    <!-- PROGRAM AND SCHEDULE - uncomment for embedding the Programme page in the homepage-->
+    <!--<section id="programme" class="main style1" w3-include-html="program.html"></section>-->
+    
+
     <!-- REGISTRATION AND SUBMISSION -->
 
-    <section id="submission" class="main style2 special">
-        <div class="container" style="text-align: justify;">
-            <header class="major">
-                <h2>Short Papers and Posters Submission</h2>
-            </header>
 
-            <p>
-                The submission period for short papers and posters has <b>not</b> opened yet. Stay tuned for updates!
-            </p>
-            <!--
-            <p>
-                The scholarships (<b>3</b> grants, <b>500</b> Euros each) were provided by AGILE to the best short paper submission to the following students:
-            </p>
-            <ul>
-                <li>
-                    <b>Dennis Dizon</b> (Technical University of Munich, Germany) for his paper <i><a href="./docs/papers/DennisDizon.pdf" target="_blank" style="color: #6bd4c8">Spatial Autocorrelation and Crosscorrelation Analysis of Voting Participation in the Philippines</a></i>.
-                </li>
-                <li>
-                    <b>Sapkota Sujan, Thapa Shangharsha, Parajuli Pukar, Bhatta Raj Nabin</b> (Lund University, Sweden) for their paper <i><a href="./docs/papers/SujanSapkota.pdf" target="_blank" style="color: #6bd4c8">Estimation of Soil Deposition in Section of Punyamata River, Nepal, due to Flooding Using Unmanned Aerial Vehicle</a></i>.
-                </li>
-                <li>
-                    <b>Nianhua Liu, Man Xiao, Xin Xu, Xuezhang Li, Qian Shi</b> (Sun Yat-Sen University, P.R. China) for their paper <i><a href="./docs/papers/NianhuaLiu.pdf" target="_blank" style="color: #6bd4c8">Environmental Detection and Management Based on Multi-source Remote Sensing Data from Baiyangdian Lake</a></i>.
-                </li>
-            </ul>
-            Congratulations!
-            -->
-            <!--submission button/link-->
-            <!-- <p> 
-                <ul class="actions uniform" style="text-align: center;">
-                    <a class="button special" id='bt1' value='Show Layer' style="background-color:darkred;color: white!important;">Paper and Poster Submission is Closed
-                    </a>
-                </ul>
-            </p> -->
-            <br>
-        </div>
-    </section>
-    <section id="submission2" class="main style1 special">
-        <div class="container" style="text-align: justify;">
-
-            <p>
-                Three best paper submissions from students will be awarded <b>travel grants to GeoMundus 2020 worth up to 500 EUR.</b> The grant covers hotel accommodation of up to 200 EUR and travel costs of up to 300 EUR. Note that only travel and accommodation
-                costs supported by documentation will be reimbursed. This grant is ONLY FOR STUDENTS. Those who are willing to apply for the grant should be a current student (till the date of the conference) enrolled in University/College. They should
-                provide documents supporting their current student status from their respective University/College during the paper submission process.
-            </p>
-
-            <p>
-                <b>Please note that GeoMundus <strong>does not provide</strong> invitations and <strong>does not support </strong>Visa Processes.</b>
-            </p>
-            <p>
-                Selected authors will be notified by email and accepted short papers and posters will be displayed under section "Accepted papers and posters" on the GeoMundus website. The presentation will be for 15 minutes followed by a 5 minutes question-answer session.
-                The official language of the conference is English.
-            </p>
-            <p>
-                For any questions about templates and formats, please write an email to
-                <a href="mailto:program@geomundus.org"><u>program@geomundus.org</u></a> Please check our website frequently for the latest updates and follow us on our social networks to receive the latest news and announcements.
-            </p>
-    </section>
-
-    <section id="registration" class="main style2">
-        <div class="container">
-            <header class="major">
-                <h2>Participant Registration</h2>
-            </header>
-            <p style="font-size: 20pt">
-                The registration period has <b>not</b> opened yet. Stay tuned for updates!
-            </p>
-    </section>
-
-    <!-- Team -->
+    <!-- Team - uncomment for embedding in the homepage-->
+    <!--
     <section id="about" class="main style1" w3-include-html='team.html'>
     </section>
-    <section id="contact" class="main style2">
+    -->
+    <section id="contact" class="main style1">
         <div class="container">
             <header class="major">
                 <h2>Contact</h2>
@@ -661,7 +603,7 @@
 
 
     <!-- Seven -->
-    <section id="sponsors" class="main style1">
+    <section id="sponsors" class="main style2">
         <div class="container">
             <header class="major">
                 <h2>Sponsors & Partners</h2>
