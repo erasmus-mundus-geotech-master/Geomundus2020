@@ -10,6 +10,7 @@ $(document).ready(
     });
     $('.topnav>li,.topnav>a').click(
         function(){
+            console.log(this);
             $(this).siblings('.has-dropdown').find('.main-menu-dropdown').slideUp();
         }
     );
@@ -288,12 +289,12 @@ function setMapVisibility(itemClicked) {
 
                 infoDinnerLoc = new google.maps.InfoWindow({
                     content: '<div id="content" style="color:#4a87d3; line-height:2; padding:1%">' +
-                    '<h2 style="color:#4686A0">Dinner Venue <br> Aposto</h2><br>' +
+                    '<h2 style="color:#4686A0">Dinner Venue <br> Die Kneisterei</h2><br>' +
                     '<p align="center" style="color:#4a87d3">' +
-                    '<img src="https://media.aposto.eu/aposto2017_muenster/Galerien/Impressionen-380/007_131030_APMS_S0001_S.jpg" width=50% height=50%></img>' +
-                    '</br><b style="color:#4a87d3">Telephone:</b> +49 2203 404001' +
-                    '</br><b style="color:#4a87d3">Address: </b> Alter Steinweg 21, 48143 Münster, Germany' +
-                    '<h3 style="color:#4a87d3"><a class="button map"  target="_blank" href="https://g.page/aposto-muenster?share">Navigate</a></h3>' +
+                    '<img src="https://www.kneisterei.ms/wp-content/uploads/2019/11/Kneisterei-raum-gr%C3%BCn.jpg" width=50% height=50%></img>' +
+                    '</br><b style="color:#4a87d3">Telephone:</b> +4917631539318' +
+                    '</br><b style="color:#4a87d3">Address: </b> Steinfurter Str. 104, 48149 Münster, Germany' +
+                    '<h3 style="color:#4a87d3"><a class="button map"  target="_blank" href="https://g.page/kneisterei?share">Navigate</a></h3>' +
                     '</div>'
                 });
 
