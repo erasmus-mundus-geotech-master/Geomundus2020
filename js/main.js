@@ -14,7 +14,7 @@ $(document).ready(
             $(this).siblings('.has-dropdown').find('.main-menu-dropdown').slideUp();
         }
     );
-    topmenu();    
+   topmenu();
     function topmenu(){    
         let h = $('.alertbanner').css('height');
         if (h!==undefined) {
